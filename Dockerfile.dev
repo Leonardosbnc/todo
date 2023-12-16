@@ -8,7 +8,7 @@ RUN mkdir -p /home/app
 RUN groupadd app && useradd -g app app
 
 # Create the home directory
-ENV APP_HOME=/home/app/api
+ENV APP_HOME=/home/app/todo
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 
@@ -20,4 +20,4 @@ RUN pip install -e .
 RUN chown -R app:app $APP_HOME
 USER app
 
-CMD python3 -m uvicorn api.app:app --reload --host 0.0.0.0 --port 8000
+CMD python3 -m uvicorn todo.app:app --reload --host 0.0.0.0 --port 8000

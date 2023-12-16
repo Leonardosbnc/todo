@@ -11,7 +11,7 @@ services:
       TODO_DB__uri: "postgresql://postgres:postgres@db:5432/${TODO_DB:-todo}"
       TODO_DB__connect_args: "{}"
     volumes:
-      - .:/home/app/api
+      - .:/home/app/todo
     depends_on:
       - db
     stdin_open: true

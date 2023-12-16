@@ -23,17 +23,17 @@ dev = [
 ]
 
 [project.scripts]
-todo = "api.cli:main"
+todo = "todo.cli:main"
 
 [build-system]
 requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["api"]
+packages = ["todo"]
 
 [tool.setuptools_scm]
-write_to = "api/VERSION.txt"
+write_to = "todo/VERSION.txt"
 
 [tool.setuptools.dynamic]
 readme = { file = ["docs/README.md"] }
@@ -45,7 +45,7 @@ xfail_strict = true
 filterwarnings = ['error', 'ignore:path is deprecated.*:DeprecationWarning:']
 
 [tool.coverage.run]
-source = ['api']
+source = ['todo']
 branch = true
 context = '${CONTEXT}'
 
@@ -66,7 +66,7 @@ skip-string-normalization = true
 
 [tool.isort]
 line_length = 100
-known_first_party = 'api'
+known_first_party = 'todo'
 multi_line_output = 3
 include_trailing_comma = true
 force_grid_wrap = 0
