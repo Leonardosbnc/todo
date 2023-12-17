@@ -2,6 +2,7 @@ from typing import Optional
 from sqlmodel import Field
 
 from todo.utils import TimestamppedModel
+from todo.security import HashedPassword
 
 
 class User(TimestamppedModel, table=True):
@@ -9,4 +10,4 @@ class User(TimestamppedModel, table=True):
     email: str = Field(nullable=False, unique=True)
     username: str = Field(nullable=False, unique=True)
     name: str = Field(nullable=False)
-    password: str = Field(nullable=False)
+    password: HashedPassword = Field(nullable=False)
